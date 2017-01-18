@@ -1,0 +1,16 @@
+{
+  "name": "nodejenkins",
+  "version": "0.0.1",
+  "description": "Test node app for using pipelines in Jenkins",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "jenkins",
+    "node",
+    "pipelines"
+  ],
+  "author": "trycrmr",
+  "license": "MIT"
+}
