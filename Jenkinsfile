@@ -2,8 +2,8 @@ node { // <1>
   stage('Build') { // <2>
     /* .. snip .. */
     echo 'Building...'
-    curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
-    yum -y install nodejs
+    sh 'curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -'
+    sh 'yum -y install nodejs'
     sh 'ls -alp'
   }
   stage('Test') {
