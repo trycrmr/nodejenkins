@@ -1,12 +1,13 @@
-node { // <1>
-  stage('Build') { // <2>
-    /* .. snip .. */
+node {
+  stage('Build') {
+    def nodeHome = tool name: 'nodejs-6.9.4', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+    env.PATH = "${nodeHome}/bin:${env.PATH}"
     echo 'Building...'
-    sh 'ls -alp'
-    sh 'npm run build'
+  }
+  stage('checkout') {
+    checkout scm
   }
   stage('Test') {
-    /* .. snip .. */
     echo 'Testing...'
     env.NODE_ENV = "test"
     print "Environment will be : ${env.NODE_ENV}"
@@ -14,13 +15,9 @@ node { // <1>
     sh 'node index.js'
   }
   stage('Deploy') {
-    /* .. snip .. */
     echo 'Deploying...'
-
   }
   stage('Cleanup') {
-    /* .. snip .. */
     echo 'Cleaning up...'
-
   }
 }
