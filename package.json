@@ -4,6 +4,7 @@
   "description": "Test node app for using pipelines in Jenkins",
   "main": "index.js",
   "scripts": {
+    "build": "curl --silent --location https://rpm.nodesource.com/setup_6.x && yum -y install nodejs",
     "test": "test"
   },
   "keywords": [
