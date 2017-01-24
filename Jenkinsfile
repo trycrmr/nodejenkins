@@ -16,8 +16,10 @@ node {
   }
   stage('Deploy') {
     echo 'Deploying...'
+    sh 'sleep 10s'
   }
   stage('Cleanup') {
     echo 'Cleaning up...'
+    sh 'sleep 10s'
   }
 }
